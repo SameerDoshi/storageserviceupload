@@ -1,0 +1,35 @@
+
+<p flex  class="md-subhead">
+    This simulates a device putting data (represented by the message below) into blob storage
+</p>
+<p flex  class="md-body-2">
+    This uses the <a href="https://github.com/Azure/azure-storage-js">Azure Storage for Java Script SDK</a>
+</p>
+<p flex class="md-body-2">
+    For dotnet use <a href="https://github.com/Azure/azure-storage-net-data-movement">Data Movement Library</a>
+</p>
+
+
+
+<br>
+<br>
+<br>
+<md-input-container layout-padding class="md-icon-float md-block">
+    <label>Message to add to blob</label>
+    <md-icon class="material-icons">message</md-icon>
+    <input ng-model="$ctrl.contents" minlength="1" md-maxlength="512" required  type="text" name="contents">
+    <div ng-messages="contents.$error">
+        <div ng-message="required">Please enter case ID</div>
+        <div ng-message="md-maxlength">too long</div>
+        <div ng-message="minlength">too short</div>
+    </div>
+</md-input-container>
+
+<case-form caseid="$ctrl.caseid" callback="$ctrl.casesubmit()"></case-form>
+<div layout-padding ng-show="$ctrl.uploading">
+        uploading....
+</div>
+ <div layout-padding ng-show="$ctrl.uploaded">
+        <md-icon class="material-icons">cloud_done</md-icon>
+        URL: {{ $ctrl.uploadUrl }}
+ </div>

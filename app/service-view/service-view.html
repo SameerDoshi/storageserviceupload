@@ -1,0 +1,9 @@
+<span flex class="md-subhead">
+    This is the view represents a Customer Service view</span>
+<span flex class="body-1">Enter a case ID and a download link will appear if a file has been uploaded.</span>
+<br>
+<br>
+<case-form caseid="$ctrl.caseid" callback="$ctrl.casesubmit()"></case-form>
+<div layout-padding ng-if="$ctrl.found">
+<a ng-href="{{$ctrl.url}}"><md-icon class="material-icons">cloud_down</md-icon> {{ $ctrl.name }}</a> Uploaded ({{$ctrl.uploaded }}
+</div>

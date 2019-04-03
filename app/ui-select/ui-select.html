@@ -1,0 +1,28 @@
+
+<md-toolbar class="md-hue-2">
+    <div class="md-toolbar-tools">
+        <h2 flex md-truncate>Storage Upload Demo</h2>
+        <md-button href="https://github.com/SameerDoshi/storageserviceupload" class="md-raised md-accent md-hue-3">
+            Full Source
+        </md-button>
+    </div>
+</md-toolbar>
+<br>
+<div ng-cloak>
+    <md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Device View">
+                <md-content class="md-padding">
+                    <device-view saurl="$ctrl.saurl" sas="$ctrl.sas"></device-view>
+                </md-content>
+            </md-tab>
+            <md-tab label="Customer Service View">
+                <md-content class="md-padding">
+                    <service-view saurl="$ctrl.saurl" sas="$ctrl.sas"></service-view>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>
+
+

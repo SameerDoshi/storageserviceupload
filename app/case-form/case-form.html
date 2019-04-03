@@ -1,0 +1,21 @@
+<form name="uploadform">
+    Enter {{ $ctrl.caseidlength }} digit case ID
+    <md-input-container class="md-icon-float md-block">
+        <label>Case ID</label>
+        <md-icon class="material-icons">new_releases</md-icon>
+        <input ng-model="$ctrl.caseid" minlength="{{ $ctrl.caseidlength }}" md-maxlength="{{ $ctrl.caseidlength }}" required md-no-asterisk type="text" name="caseid">
+        <div ng-messages="uploadform.caseid.$error">
+            <div ng-message="required">Please enter case ID</div>
+            <div ng-message="md-maxlength">too long</div>
+            <div ng-message="minlength">too short</div>
+        </div>
+    </md-input-container>
+    <div layout="row">
+        <md-button class="md-primary md-raised" ng-disabled="uploadform.$invalid" ng-click="$ctrl.callback()">
+            <md-icon class="material-icons">check</md-icon>
+        </md-button>
+    </div>
+</form>
+
+
+
