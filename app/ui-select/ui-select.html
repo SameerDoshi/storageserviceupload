@@ -13,12 +13,12 @@
         <md-tabs md-dynamic-height md-border-bottom>
             <md-tab label="Device View">
                 <md-content class="md-padding">
-                    <device-view saurl="$ctrl.saurl" sas="$ctrl.sas"></device-view>
+                    <device-view saurl="$ctrl.saurl" sas="$ctrl.sas" containername="$ctrl.containerName"></device-view>
                 </md-content>
             </md-tab>
             <md-tab label="Customer Service View">
                 <md-content class="md-padding">
-                    <service-view saurl="$ctrl.saurl" sas="$ctrl.sas"></service-view>
+                    <service-view saurl="$ctrl.saurl" sas="$ctrl.sas" containername="$ctrl.containerName"></service-view>
                 </md-content>
             </md-tab>
         </md-tabs>

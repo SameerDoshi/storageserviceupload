@@ -4,7 +4,8 @@ component('deviceView', {
         templateUrl: '/device-view/device-view.html',
         bindings: {
             saurl:'<',
-            sas:'<'
+            sas:'<',
+            containername: '<'
         },
         controller: function DeviceViewController($scope,$window) {
             let self=this;
@@ -33,7 +34,7 @@ component('deviceView', {
                     self.saurl+self.sas,
                     pipeline
                 );
-                const containerName = 'data';
+                const containerName = self.containername;
                 const containerURL = az.ContainerURL.fromServiceURL(serviceURL, containerName);
                 // create blob
                 const content = "hello";

@@ -6,6 +6,7 @@ component('uiSelect', {
             let self=this;
             this.saurl="https://ssduploaderservice.blob.core.windows.net/";
             this.sas="replaceme";
+            this.containerName='data';
 
         }
     }

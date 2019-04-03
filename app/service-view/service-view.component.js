@@ -4,7 +4,8 @@ component('serviceView', {
         templateUrl: '/service-view/service-view.html',
         bindings: {
             saurl:'<',
-            sas:'<'
+            sas:'<',
+            containername: '<'
         },
         controller: function ServiceViewViewController($window,$scope) {
             let self = this;
@@ -41,7 +42,7 @@ component('serviceView', {
                     self.saurl+self.sas,
                     pipeline
                 );
-                const containerName = 'data';
+                const containerName = self.containername;
                 const containerURL = az.ContainerURL.fromServiceURL(serviceURL, containerName);
                 // create blob
                 const content = "hello";
